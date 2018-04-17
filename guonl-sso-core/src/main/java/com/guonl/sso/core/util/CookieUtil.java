@@ -17,8 +17,7 @@ public class CookieUtil {
     private static final String COOKIE_PATH = "/";
 
     /**
-     * 保存
-     *
+     * Cookie的设置
      * @param response
      * @param key
      * @param value
@@ -54,7 +53,7 @@ public class CookieUtil {
     }
 
     /**
-     * 查询value
+     * Cookie的查询
      *
      * @param request
      * @param key

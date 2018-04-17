@@ -12,7 +12,7 @@ import com.guonl.sso.core.util.JedisUtil;
 public class SsoLoginStore {
 
     /**
-     * 获取用户信息
+     * 根据sessionID获取redis中的user信息
      * @param sessionId
      * @return
      */
@@ -26,11 +26,20 @@ public class SsoLoginStore {
         return null;
     }
 
+    /**
+     * 删除redis中的user
+     * @param sessionId
+     */
     public static void remove(String sessionId){
         String redisKey = redisKey(sessionId);
         JedisUtil.del(redisKey);
     }
 
+    /**
+     * 保存用户的信息到redis
+     * @param sessionId
+     * @param user
+     */
     public static void put(String sessionId,SsoUser user){
         String redisKey = redisKey(sessionId);
         JedisUtil.setObjectValue(redisKey,user);
@@ -38,6 +47,11 @@ public class SsoLoginStore {
     }
 
 
+    /**
+     * 获取redis的key
+     * @param sessionId
+     * @return
+     */
     private static String redisKey(String sessionId){
         return Conf.SSO_SESSIONID.concat(":").concat(sessionId);
     }

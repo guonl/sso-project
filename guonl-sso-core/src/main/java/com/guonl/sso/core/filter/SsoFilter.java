@@ -50,12 +50,16 @@ public class SsoFilter extends HttpServlet implements Filter{
             // remove cookie
             SsoLoginHelper.removeSessionIdInCookie(req,res);
 
-            //记录一下客户端的url
-            //servletRequest.setAttribute(Conf.REDIRECT_URL,link.substring(0,link.length()-logoutPath.length()));
-
+            //如果是客户端的logout，需要跳转到客户端的登录
             // redirect logout
             String logoutPageUrl = ssoServer.concat(Conf.SSO_LOGOUT);
-            res.sendRedirect(logoutPageUrl);
+            if(link.contains(ssoServer)){
+                res.sendRedirect(logoutPageUrl);
+            }else {
+                logoutPageUrl +=  "?" + Conf.REDIRECT_URL + "=" +
+                        link.substring(0,link.length() - Conf.SSO_LOGOUT.length());
+                res.sendRedirect(logoutPageUrl);
+            }
 
             return;
         }

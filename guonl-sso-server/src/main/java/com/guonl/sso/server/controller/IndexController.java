@@ -122,6 +122,7 @@ public class IndexController {
         user.setUserid(existUser.getId());
         user.setUsername(existUser.getUsername());
 
+        // 生成sessionId
         String sessionId = UUID.randomUUID().toString();
 
         SsoLoginHelper.login(response, sessionId, user);

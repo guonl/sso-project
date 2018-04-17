@@ -50,7 +50,7 @@
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
 
-        <!-- xxl-sso-core -->
+        <!-- sso-core -->
         <dependency>
             <groupId>com.guonl</groupId>
             <artifactId>guonl-sso-core</artifactId>

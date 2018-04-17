@@ -84,7 +84,7 @@ public class JedisUtil {
                                 jedisShardInfos.add(jedisShardInfo);
                             }
                             shardedJedisPool = new ShardedJedisPool(config, jedisShardInfos);
-                            logger.info(">>>>>>>>>>> xxl-sso, JedisUtil.ShardedJedisPool init success.");
+                            logger.info(">>>>>>>>>>> sso, JedisUtil.ShardedJedisPool init success.");
                         }
 
                     } finally {
@@ -98,7 +98,7 @@ public class JedisUtil {
         }
 
         if (shardedJedisPool == null) {
-            throw new NullPointerException(">>>>>>>>>>> xxl-sso, JedisUtil.ShardedJedisPool is null.");
+            throw new NullPointerException(">>>>>>>>>>> sso, JedisUtil.ShardedJedisPool is null.");
         }
 
         ShardedJedis shardedJedis = shardedJedisPool.getResource();

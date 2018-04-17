@@ -50,6 +50,9 @@ public class SsoFilter extends HttpServlet implements Filter{
             // remove cookie
             SsoLoginHelper.removeSessionIdInCookie(req,res);
 
+            //记录一下客户端的url
+            //servletRequest.setAttribute(Conf.REDIRECT_URL,link.substring(0,link.length()-logoutPath.length()));
+
             // redirect logout
             String logoutPageUrl = ssoServer.concat(Conf.SSO_LOGOUT);
             res.sendRedirect(logoutPageUrl);
@@ -93,7 +96,7 @@ public class SsoFilter extends HttpServlet implements Filter{
                 return;
             } else {
 
-                // redirect logout
+                // redirect login
                 String loginPageUrl = ssoServer.concat(Conf.SSO_LOGIN)
                         + "?" + Conf.REDIRECT_URL + "=" + link;
 

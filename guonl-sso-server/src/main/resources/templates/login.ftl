@@ -13,7 +13,7 @@
 
     <div class="login-box">
         <div class="login-logo">
-            <a><b>guonl-</b>SSO</a>
+            <a><b>SSO</b></a>
         </div>
         <form action="${request.contextPath}/doLogin">
             <div class="login-box-body">

@@ -6,14 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Created by guonl
- * Date 2018/4/13 上午10:02
+ * Date 2018/4/17 上午10:56
  * Description:
  */
 @EnableAutoConfiguration
 @SpringBootApplication
-public class SampleApplication {
+public class ClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SampleApplication.class,args);
+        SpringApplication.run(ClientApplication.class,args);
     }
 }

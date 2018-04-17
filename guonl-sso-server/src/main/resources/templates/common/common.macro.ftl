@@ -50,7 +50,7 @@
     <header class="main-header">
         <a href="${request.contextPath}/" class="logo">
             <span class="logo-mini"><b>XXL</b></span>
-            <span class="logo-lg"><b>XXL SSO</b></span>
+            <span class="logo-lg"><b>SSO</b></span>
         </a>
         <nav class="navbar navbar-static-top" role="navigation">
             <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="sr-only">切换导航</span></a>
@@ -84,12 +84,10 @@
 
 <#macro commonFooter >
     <footer class="main-footer">
-        Powered by <b>XXL-SSO</b> 0.1.0
+        Powered by <b>SSO</b> 0.1.0
         <div class="pull-right hidden-xs">
             <strong>Copyright &copy; 2018-${.now?string('yyyy')} &nbsp;
-                <a href="http://www.xuxueli.com/" target="_blank" >xuxueli</a>
-                &nbsp;
-                <a href="https://github.com/xuxueli/xxl-sso" target="_blank" >github</a>
+
             </strong><!-- All rights reserved. -->
         </div>
     </footer>
